@@ -1,0 +1,2540 @@
+/* AppointmentScheduler.css */
+
+body {
+  background-color: #f8f9fa; /* Light, clean background for the whole site */
+  color: #333;
+}
+
+.scheduler-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.card {
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+}
+
+.card h2 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.input-field {
+  width: 100%;
+  margin-top: 1rem;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+}
+
+.button {
+  width: 100%;
+  margin-top: 1rem;
+  padding: 0.5rem;
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #2563eb;
+}
+
+.button:disabled {
+  background-color: #9ca3af;
+  cursor: not-allowed;
+}
+
+.payment-link {
+  margin-top: 1rem;
+  color: #3b82f6;
+  text-decoration: underline;
+}
+
+/* AppointmentScheduler.css */
+
+/* CSS for the Upcoming Appointments section */
+
+.card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  margin: 1rem;
+}
+
+.card h2 {
+  font-size: 1.5rem;
+  color: #333333;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.appointments-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.appointments-list li {
+  background-color: #f9f9f9;
+  border-left: 4px solid #3b82f6; /* A blue accent for visual appeal */
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  font-size: 1rem;
+  color: #333333;
+}
+
+.appointments-list li strong {
+  color: #3b82f6; /* Highlight the date in blue */
+  font-weight: bold;
+}
+
+.appointments-list li:last-child {
+  margin-bottom: 0; /* Remove margin from the last item */
+}
+
+.no-appointments {
+  text-align: center;
+  color: #6b7280;
+  font-style: italic;
+}
+
+.selected-date {
+  margin-top: 1rem;
+  font-size: 1rem;
+}
+
+/* Header jsx */
+
+/* --- Header Base Styles (These are the DEFAULT styles for ALL screen sizes,
+     but primarily define the desktop look. Mobile styles will OVERRIDE these.) --- */
+.header-main {
+  background-color: #fff; /* Clean white background */
+  padding: 15px 0;
+  border-bottom: 1px solid #eee; /* Subtle separator */
+  position: fixed; /* Make it fixed by default */
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000; /* Ensure it stays on top of other content */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* Soft shadow */
+  transition: all 0.3s ease-in-out; /* Smooth transition for sticky effect */
+}
+
+/* Sticky Header Effect */
+.header-main.sticky {
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.95
+  ); /* Slightly transparent when sticky */
+  padding: 10px 0; /* Shrink slightly */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* More prominent shadow when sticky */
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between; /* Distribute items evenly */
+  align-items: center;
+}
+
+/* --- Logo Styling --- */
+.header-logo {
+  font-size: 2.2em;
+  font-weight: 700;
+  color: #ff6f61; /* Accent color for the logo */
+  text-decoration: none;
+  transition: color 0.3s ease;
+  line-height: 1; /* Keep text logo compact */
+}
+
+.header-logo:hover {
+  color: #e55c50; /* Darker on hover */
+}
+
+/* If using an image logo */
+.header-logo img {
+  height: 40px; /* Adjust as needed */
+  width: auto;
+  display: block;
+}
+
+/* --- Desktop Navigation (DEFAULT: Displayed on PC) --- */
+.desktop-nav {
+  /* Added this rule to ensure it's block by default */
+  display: block;
+}
+.desktop-nav .nav-list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 30px; /* Space between nav items */
+}
+
+.desktop-nav .nav-link {
+  color: #333;
+  text-decoration: none;
+  font-size: 1.1em;
+  font-weight: 500;
+  position: relative; /* For underline effect */
+  transition: color 0.3s ease;
+  padding: 5px 0; /* Add padding for clickable area */
+}
+
+.desktop-nav .nav-link:hover {
+  color: #ff6f61; /* Accent color on hover */
+}
+
+/* Underline effect on hover */
+.desktop-nav .nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: #ff6f61;
+  transition: width 0.3s ease;
+}
+
+.desktop-nav .nav-link:hover::after {
+  width: 100%;
+}
+
+/* --- Header Button (Call to Action) (DEFAULT: Displayed on PC) --- */
+.header-button {
+  background-color: #ff6f61;
+  color: #fff;
+  padding: 10px 25px;
+  border-radius: 50px; /* Pill-shaped button */
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1em;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  white-space: nowrap; /* Prevent button text from wrapping */
+  display: inline-block; /* Ensure it's visible by default */
+}
+
+.header-button:hover {
+  background-color: #e55c50;
+  transform: translateY(-2px); /* Subtle lift on hover */
+}
+
+/* --- Mobile Hamburger Menu (DEFAULT: Hidden on PC) --- */
+.hamburger-menu {
+  display: none; /* Hidden by default on desktop */
+  width: 30px;
+  height: 20px;
+  position: relative;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  z-index: 1001; /* Ensure it's above other header elements */
+}
+
+.hamburger-menu span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #333;
+  border-radius: 2px;
+  position: absolute;
+  left: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.hamburger-menu span:nth-child(1) {
+  top: 0;
+}
+.hamburger-menu span:nth-child(2) {
+  top: 9px;
+}
+.hamburger-menu span:nth-child(3) {
+  top: 18px;
+}
+
+/* Hamburger X transform */
+.hamburger-menu.open span:nth-child(1) {
+  top: 9px;
+  transform: rotate(45deg);
+}
+.hamburger-menu.open span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger-menu.open span:nth-child(3) {
+  top: 9px;
+  transform: rotate(-45deg);
+}
+
+/* --- Mobile Navigation (Off-canvas) (DEFAULT: Hidden on PC) --- */
+.nav-list-mobile {
+  display: none; /* Hidden by default on desktop */
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%; /* Take full width on mobile */
+  height: 100vh; /* Full viewport height */
+  background-color: #fff;
+  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+  padding-top: 100px; /* Space for the fixed header */
+  transform: translateX(100%); /* Start off-screen */
+  /* Remove transition here, GSAP will handle it for smoothness when opening */
+  z-index: 999; /* Below hamburger, above content */
+  overflow-y: auto; /* Enable scrolling if content is long */
+  visibility: hidden; /* Use visibility with opacity for GSAP animation */
+  opacity: 0; /* Use opacity with GSAP animation */
+}
+
+/* This .open class is primarily for mobile to make the menu visible and correctly positioned by GSAP */
+.nav-list-mobile.open {
+  /* transform is handled by GSAP */
+  /* opacity is handled by GSAP */
+  visibility: visible; /* Make visible for GSAP animation to take effect */
+}
+
+.nav-list-mobile ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center links in mobile menu */
+}
+
+.nav-list-mobile li {
+  width: 100%; /* Full width for list items */
+  text-align: center;
+  border-bottom: 1px solid #eee; /* Separator between links */
+}
+
+.nav-list-mobile li:last-child {
+  border-bottom: none;
+}
+
+.nav-list-mobile .nav-link-mobile {
+  display: block; /* Make entire li clickable */
+  padding: 20px 0;
+  color: #333;
+  text-decoration: none;
+  font-size: 1.3em;
+  font-weight: 500;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-list-mobile .nav-link-mobile:hover {
+  background-color: #f5f5f5;
+  color: #ff6f61;
+}
+
+.nav-list-mobile .button-mobile {
+  margin-top: 30px; /* Space for the button */
+  background-color: #ff6f61;
+  color: #fff;
+  border-radius: 50px;
+  padding: 15px 30px;
+  width: auto; /* Adjust button width */
+  display: inline-block; /* Allow button to center */
+}
+
+.nav-list-mobile .button-mobile:hover {
+  background-color: #e55c50;
+  color: #fff;
+}
+
+/* --- Media Queries for Responsiveness --- */
+@media (max-width: 768px) {
+  /* Hide desktop elements on small screens */
+  .desktop-nav,
+  .header-button {
+    display: none;
+  }
+
+  /* Show mobile elements on small screens */
+  .hamburger-menu {
+    display: block; /* Show hamburger icon */
+  }
+  .nav-list-mobile {
+    /* GSAP will handle transform and opacity, but ensure it's prepared for animation */
+    display: block; /* Make it part of the layout for GSAP to animate */
+    /* visibility and opacity are controlled by GSAP from the JS,
+       but setting initial opacity: 0 and visibility: hidden is good practice */
+  }
+
+  /* Adjust header padding for mobile */
+  .header-main {
+    padding: 12px 0;
+  }
+  .header-main.sticky {
+    padding: 8px 0;
+  }
+
+  .header-logo {
+    font-size: 1.8em; /* Smaller logo on mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .header-logo {
+    font-size: 1.6em;
+  }
+  .header-container {
+    padding: 0 15px; /* Smaller horizontal padding */
+  }
+}
+
+/* Hero jsx */
+
+.hero {
+  position: relative;
+  min-height: 60vh; /* Reduced height for better balance */
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  overflow: hidden;
+  background-image: url("https://pngtree.com/freebackground/salon-service-salon-design-hd_2487132.html");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18); 
+  padding: 48px 0 56px 0;
+  background-color: #555;
+}
+
+.hero-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: 1;
+  transform: translateX(-50%) translateY(-50%);
+  object-fit: cover; 
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6); /* Dark overlay for better text contrast */
+  z-index: 2; /* Ensure overlay is above video/image but below content */
+}
+
+.hero-content {
+  position: relative;
+  z-index: 3; /* Ensure content is above the overlay */
+  max-width: 900px; /* Constrain content width for readability */
+  padding: 20px; /* Add some padding */
+  margin: 0 20px; /* Add horizontal margin for smaller screens */
+}
+
+.hero-content h2 {
+  font-size: 4.5em; /* Large, bold headline */
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 20px;
+  text-shadow: 0 5px 15px rgba(0, 0, 0, 0.4); /* Subtle shadow for depth */
+  text-transform: uppercase; /* Make it pop */
+  letter-spacing: 2px;
+}
+
+.hero-content p {
+  font-size: 1.5em;
+  line-height: 1.6;
+  margin-bottom: 40px;
+  font-weight: 300;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  color: rgba(255, 255, 255, 0.9); /* Slightly muted white for contrast */
+}
+
+/* --- Global Button Style (Reusable) --- */
+.btn {
+  display: inline-block;
+  background-color: #ff6f61; /* Vibrant accent color */
+  color: #fff;
+  padding: 15px 30px;
+  border-radius: 50px; /* Pill shape */
+  text-decoration: none;
+  font-size: 1.2em;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease,
+    box-shadow 0.3s ease;
+  box-shadow: 0 8px 25px rgba(255, 111, 97, 0.3);
+  margin-left: -30px;
+}
+
+.btn:hover {
+  background-color: #e55c50; /* Slightly darker on hover */
+  transform: translateY(-3px); /* Subtle lift effect */
+  box-shadow: 0 12px 35px rgba(255, 111, 97, 0.4); /* More pronounced shadow */
+}
+
+.btn:active {
+  transform: translateY(0); /* Press down effect */
+}
+
+/* Optional: Scroll down button */
+.scroll-down-btn {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+  z-index: 4; /* Ensure it's above other elements */
+}
+
+.scroll-down-btn:hover {
+  opacity: 1;
+}
+
+.scroll-down-btn .arrow-down {
+  animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+/* --- Responsive Adjustments for Hero --- */
+@media (max-width: 992px) {
+  .hero-content h2 {
+    font-size: 3.5em;
+  }
+  .hero-content p {
+    font-size: 1.3em;
+  }
+  .btn {
+    padding: 12px 30px;
+    font-size: 1.1em;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    height: 70vh; /* Adjust height for smaller screens */
+    background-attachment: scroll; /* Disable parallax on mobile for performance */
+  }
+  .hero-content h2 {
+    font-size: 2.8em;
+  }
+  .hero-content p {
+    font-size: 1.1em;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    height: 60vh; /* Even shorter on very small screens */
+  }
+  .hero-content h2 {
+    font-size: 2em;
+  }
+  .hero-content p {
+    font-size: 1em;
+  }
+  .btn {
+    padding: 10px 25px;
+    font-size: 1em;
+  }
+}
+
+/* services jsx */
+
+/* Base Styles for the section */
+/* --- Services Section Base Styles (Existing) --- */
+.services-section {
+  padding: 80px 0;
+  background-color: #fcf6f9; /* Soft background color */
+}
+
+.services-section .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section-title {
+  font-size: 3em;
+  color: #333;
+  text-align: center;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.section-subtitle {
+  font-size: 1.3em;
+  color: #666;
+  text-align: center;
+  margin-bottom: 50px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.5;
+}
+
+/* --- Services Grid (Existing) --- */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(280px, 1fr)
+  ); /* Responsive grid */
+  gap: 30px;
+}
+
+.service-card {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex; /* For better alignment of content */
+  flex-direction: column;
+  justify-content: space-between; /* Push Learn More to bottom */
+}
+
+.service-card:hover {
+  transform: translateY(-8px); /* Subtle lift on hover */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.service-icon {
+  font-size: 3.5em; /* Larger emoji/icon */
+  margin-bottom: 15px;
+  line-height: 1; /* Prevent extra space around icon */
+  color: #ff6f61; /* Apply accent color if using SVG/Font Awesome */
+}
+
+.service-title {
+  font-size: 1.6em;
+  color: #333;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.service-description {
+  font-size: 1em;
+  color: #777;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  flex-grow: 1; /* Allows description to take up available space */
+}
+
+.learn-more-button {
+  display: inline-block;
+  background-color: #ff6f61;
+  color: #fff;
+  padding: 10px 25px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95em;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  border: none; /* Make it a button */
+  cursor: pointer;
+}
+
+.learn-more-button:hover {
+  background-color: #e55c50;
+  transform: translateY(-2px);
+}
+
+/* --- New Styles for Service Details & Booking View --- */
+.service-details-view {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.service-detail-description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #666;
+  margin: 1.5rem 0;
+}
+
+.service-features {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+
+.service-features h3 {
+  color: #333;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.service-features ul {
+  list-style: none;
+  padding: 0;
+}
+
+.service-features li {
+  padding: 0.5rem 0;
+  color: #555;
+  display: flex;
+  align-items: center;
+}
+
+.service-features li:before {
+  content: "✓";
+  color: #4caf50;
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.service-actions {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.book-now-button {
+  background-color: #4caf50;
+  color: white;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.book-now-button:hover {
+  background-color: #45a049;
+}
+
+.back-button {
+  background-color: #f8f9fa;
+  color: #333;
+  padding: 0.5rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  transition: all 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #e9ecef;
+}
+
+/* Styles for individual time slot cards */
+.time-slot-card {
+  background-color: #f2f2f2;
+  color: #333;
+  padding: 15px 10px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 1em;
+  font-weight: 500;
+  cursor: pointer; /* Ensure available slots have pointer */
+  transition: all 0.2s ease;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  height: 80px;
+}
+
+.time-slot-card:hover {
+  background-color: #e0e0e0;
+  border-color: #ff6f61;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.time-slot-card.available {
+  background-color: #e6ffe6; /* Light green for available */
+  border-color: #4caf50;
+  color: #333;
+}
+
+.time-slot-card.available:hover {
+  background-color: #d0ffd0;
+  border-color: #4caf50;
+}
+
+/* --- CRITICAL CHANGES FOR BOOKED SLOTS --- */
+.time-slot-card.booked {
+  background-color: #ffe6e6; /* Light red for booked */
+  border-color: #f44336;
+  color: #888;
+  /* REMOVE cursor: not-allowed; if it's present */
+  cursor: pointer; /* Make sure it's clickable */
+  opacity: 0.7;
+  text-decoration: line-through; /* Strikethrough for booked */
+  /* If you had pointer-events: none; REMOVE IT */
+  pointer-events: auto; /* Ensure events are allowed */
+}
+
+.time-slot-card.booked:hover {
+  /* Add a hover effect to indicate interactivity for cancellation */
+  transform: translateY(-2px); /* Allow it to lift on hover */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Add shadow on hover */
+  background-color: #ffd0d0; /* Slightly darker red on hover */
+  border-color: #d00000; /* Darker border on hover */
+}
+
+/* ... (keep status-badge and responsive styles as they are) ... */
+
+.status-badge {
+  font-size: 0.75em;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 5px;
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+}
+
+.time-slot-card.available .status-badge {
+  background-color: #4caf50;
+  color: #fff;
+}
+
+.time-slot-card.booked .status-badge {
+  background-color: #f44336;
+  color: #fff;
+}
+
+/* Responsive adjustments for new view */
+@media (max-width: 768px) {
+  .service-details-view {
+    padding: 25px;
+  }
+  .service-details-view .section-title {
+    font-size: 2em;
+  }
+  .service-details-view .service-detail-description {
+    font-size: 1em;
+  }
+  .time-slots-grid {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 10px;
+  }
+  .time-slot-card {
+    padding: 12px 8px;
+    height: 70px;
+  }
+  .status-badge {
+    position: static; /* Stack on mobile for better visibility */
+    margin-top: 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .service-details-view {
+    padding: 15px;
+  }
+  .service-details-view .section-title {
+    font-size: 1.8em;
+  }
+}
+/* --- About Section Base --- */
+
+body {
+  margin: 0;
+  font-family: "Montserrat", sans-serif; /* Applied globally */
+  line-height: 1.6;
+  color: #333;
+  overflow-x: hidden; /* Prevent horizontal scrollbar from animations */
+}
+
+/* --- Section: About Section Base Styles --- */
+.about-section {
+  padding: 0; /* Remove default padding as hero handles it */
+  background-color: #f8f8f8; /* Light background for overall section when hero is gone */
+  color: #333;
+  font-family: "Montserrat", sans-serif; /* A more modern, impactful font */
+  overflow: hidden; /* Important for animations that move elements in/out */
+  position: relative; /* For stacking context if needed */
+}
+
+/* --- Section: Container for inner content --- */
+.about-section .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 20px; /* Padding for inner content */
+  text-align: center;
+}
+
+/* --- Hero Section (Visual Shock) --- */
+.about-hero {
+  position: relative;
+  height: 80vh; /* Make it take up significant viewport height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Keep content within bounds */
+  background-image: url("/images/hero-bg.jpg"); /* Replace with a stunning, high-res image */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* Parallax effect for added depth */
+  color: #fff; /* Ensure hero content text is white */
+}
+
+/* If using video background (keep this if you might use it) */
+.hero-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translateX(-50%) translateY(-50%);
+  z-index: 1;
+  object-fit: cover;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7); /* Dark overlay for text readability */
+  z-index: 2;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 3;
+  color: #fff; /* Ensure text is white */
+  text-align: center;
+  max-width: 800px;
+  padding: 0 20px;
+}
+
+.hero-heading {
+  font-size: 4.8em; /* Massive, impactful heading */
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 25px;
+  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  text-transform: uppercase;
+}
+
+.hero-lead {
+  font-size: 1.6em;
+  font-weight: 300;
+  line-height: 1.5;
+  color: #e0e0e0;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.main-about-content {
+  background-color: #fff; /* White background for readability after the hero */
+  color: #333;
+  padding: 80px 20px;
+}
+
+/* --- Section Subtitle (Consistent styling) --- */
+.section-subtitle {
+  font-size: 2.8em;
+  font-weight: 700;
+  color: #333; /* Dark color for white background */
+  margin-bottom: 50px;
+  position: relative;
+  padding-bottom: 15px;
+  display: inline-block; /* To make underline fit content */
+}
+
+.section-subtitle::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  width: 80px;
+  height: 4px;
+  background-color: #ff6f61; /* Accent color */
+  border-radius: 2px;
+}
+
+/* --- Philosophy Section --- */
+.about-philosophy {
+  margin-bottom: 80px;
+}
+
+.philosophy-text {
+  font-size: 1.25em;
+  line-height: 1.8;
+  max-width: 900px;
+  margin: 0 auto 60px;
+  color: #555;
+}
+
+.about-highlights {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+  margin-top: 50px;
+}
+
+.highlight-item {
+  background-color: #f8f8f8;
+  border-radius: 15px;
+  padding: 40px 30px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  /* Ensure these are not set to 0 by default, GSAP will handle it */
+  /* opacity: 0;  <-- REMOVE THIS IF PRESENT */
+  /* transform: translateY(50px); <-- REMOVE THIS IF PRESENT */
+}
+
+.highlight-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+.highlight-icon {
+  font-size: 4.5em; /* Larger icons */
+  color: #ff6f61;
+  margin-bottom: 25px;
+  line-height: 1; /* Prevent extra space */
+}
+
+.highlight-item h3 {
+  font-size: 1.7em;
+  color: #333;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.highlight-item p {
+  font-size: 1.05em;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* --- Statistics Section (The WOW Factor) --- */
+.stats-section {
+  background-color: #333; /* Dark background for stats */
+  color: #fff;
+  padding: 80px 0;
+  margin-bottom: 80px;
+}
+
+.stats-section .section-subtitle {
+  color: #fff; /* White title on dark background */
+}
+.stats-section .section-subtitle::after {
+  background-color: #ff6f61;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+  margin-top: 50px;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* Ensure these are not set to 0 by default, GSAP will handle it */
+  /* opacity: 0;  <-- REMOVE THIS IF PRESENT */
+  /* transform: translateY(50px); <-- REMOVE THIS IF PRESENT */
+}
+
+.stat-number {
+  font-size: 4.5em; /* Huge numbers for impact */
+  font-weight: 800;
+  color: #ff6f61;
+  line-height: 1;
+  margin-bottom: 10px;
+}
+
+.stat-description {
+  font-size: 1.2em;
+  color: #e0e0e0;
+  line-height: 1.4;
+  font-weight: 500;
+}
+
+/* --- Team Section --- */
+.team-section {
+  margin-bottom: 80px;
+}
+
+.team-section .section-subtitle {
+  color: #333;
+}
+.team-section .section-subtitle::after {
+  background-color: #ff6f61;
+}
+
+.team-intro {
+  font-size: 1.2em;
+  line-height: 1.7;
+  max-width: 800px;
+  margin: 0 auto 50px;
+  color: #555;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-top: 50px;
+}
+
+.team-member {
+  background-color: #f8f8f8;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  /* Ensure these are not set to 0 by default, GSAP will handle it */
+  /* opacity: 0;  <-- REMOVE THIS IF PRESENT */
+  /* transform: translateY(80px) rotateX(-90deg); <-- REMOVE THIS IF PRESENT */
+}
+
+.team-member:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.member-photo {
+  width: 100%;
+  padding-top: 100%; /* Creates a perfect square for the image */
+  background-size: cover;
+  background-position: center;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  transition: transform 0.5s ease;
+}
+
+.team-member:hover .member-photo {
+  transform: scale(1.05); /* Zoom in on hover */
+}
+
+.team-member h4 {
+  font-size: 1.8em;
+  color: #333;
+  margin-top: 25px;
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+.team-member .specialty {
+  font-size: 1.1em;
+  color: #ff6f61;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.team-member .bio {
+  font-size: 1em;
+  color: #777;
+  padding: 0 25px 30px;
+  line-height: 1.6;
+}
+
+/* --- Testimonials Section --- */
+.testimonials-section {
+  background-color: #f0f0f0; /* Light background for testimonials */
+  padding: 80px 0;
+  margin-top: 60px; /* Space above */
+}
+
+.testimonials-section .section-subtitle {
+  color: #333;
+}
+.testimonials-section .section-subtitle::after {
+  background-color: #ff6f61;
+}
+
+.testimonial-carousel {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 50px;
+}
+
+.testimonial-carousel blockquote {
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+  padding: 35px;
+  font-size: 1.15em;
+  line-height: 1.7;
+  color: #555;
+  font-style: italic;
+  position: relative;
+  border-left: 5px solid #ff6f61; /* Accent border */
+  text-align: left; /* Quotes are usually left-aligned */
+  /* Ensure these are not set to 0 by default, GSAP will handle it */
+  /* opacity: 0;  <-- REMOVE THIS IF PRESENT */
+  /* transform: translateX(-100px); <-- REMOVE THIS IF PRESENT */
+}
+
+.testimonial-carousel blockquote::before {
+  content: "“"; /* Opening quote mark */
+  font-size: 5em;
+  color: rgba(255, 111, 97, 0.2); /* Faded accent color */
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  line-height: 1;
+  z-index: 0;
+}
+
+.testimonial-carousel cite {
+  display: block;
+  margin-top: 20px;
+  font-size: 0.95em;
+  font-weight: 600;
+  color: #333;
+  text-align: right;
+  z-index: 1; /* Ensure text is above pseudo-element */
+  position: relative;
+}
+
+.testimonial-carousel cite .city {
+  font-weight: normal;
+  color: #888;
+  font-style: normal;
+}
+
+/* --- Responsive Adjustments (Keep as is, they look good) --- */
+@media (max-width: 992px) {
+  .hero-heading {
+    font-size: 3.5em;
+  }
+  .hero-lead {
+    font-size: 1.3em;
+  }
+  .section-subtitle {
+    font-size: 2.2em;
+  }
+  .philosophy-text {
+    font-size: 1.1em;
+  }
+  .stat-number {
+    font-size: 3.5em;
+  }
+  .stat-description {
+    font-size: 1.1em;
+  }
+  .team-member h4 {
+    font-size: 1.6em;
+  }
+  .team-member .specialty {
+    font-size: 1em;
+  }
+  .testimonial-carousel blockquote {
+    font-size: 1.05em;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-hero {
+    height: 60vh;
+  }
+  .hero-heading {
+    font-size: 2.8em;
+    margin-bottom: 15px;
+  }
+  .hero-lead {
+    font-size: 1.1em;
+  }
+  .main-about-content {
+    padding: 60px 20px;
+  }
+  .section-subtitle {
+    font-size: 1.8em;
+    margin-bottom: 40px;
+  }
+  .about-philosophy,
+  .stats-section,
+  .team-section,
+  .testimonials-section {
+    margin-bottom: 60px;
+  }
+  .highlight-item,
+  .stat-item,
+  .team-member,
+  .testimonial-carousel blockquote {
+    padding: 30px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-hero {
+    height: 50vh;
+  }
+  .hero-heading {
+    font-size: 2em;
+  }
+  .hero-lead {
+    font-size: 0.95em;
+  }
+  .main-about-content {
+    padding: 40px 15px;
+  }
+  .section-subtitle {
+    font-size: 1.5em;
+  }
+  .philosophy-text {
+    font-size: 0.95em;
+  }
+  .highlight-icon {
+    font-size: 3.5em;
+  }
+  .highlight-item h3 {
+    font-size: 1.4em;
+  }
+  .stat-number {
+    font-size: 3em;
+  }
+  .stat-description {
+    font-size: 0.9em;
+  }
+  .team-member h4 {
+    font-size: 1.4em;
+  }
+  .team-member .bio {
+    font-size: 0.9em;
+  }
+  .testimonial-carousel blockquote {
+    font-size: 1em;
+  }
+}
+/* Contact.css */
+
+.contact {
+  padding: 4rem 2rem;
+  text-align: center;
+  background-color: #f8f9fa;
+}
+
+.contact h2 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 2rem;
+  position: relative;
+  display: inline-block;
+}
+
+.contact h2::after {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 4px;
+  background: #ff6b6b;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: left;
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: #ff6b6b;
+}
+
+.contact-form textarea {
+  height: 150px;
+  resize: vertical;
+}
+
+.btn {
+  background-color: #ff6b6b;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #ff5252;
+}
+
+.contact-form .btn {
+  margin-top: 1rem;
+}
+
+/* --- Footer Section Styling --- */
+.footer-section {
+  background-color: #222; /* Dark background for contrast */
+  color: #f0f0f0; /* Light text color */
+  padding: 60px 0 20px; /* Top padding, bottom padding for copyright */
+  font-family: "Arial", sans-serif; /* Consistent font */
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(220px, 1fr)
+  ); /* Responsive columns */
+  gap: 40px; /* Space between columns */
+  margin-bottom: 40px; /* Space above the bottom bar */
+}
+
+/* --- Footer Columns --- */
+.footer-column {
+  padding: 10px 0;
+}
+
+.footer-column h3 {
+  font-size: 1.6em;
+  color: #fff;
+  margin-bottom: 25px;
+  position: relative; /* For underline effect */
+  padding-bottom: 10px;
+}
+
+.footer-column h3::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 50px; /* Short underline */
+  height: 3px;
+  background-color: #ff6f61; /* Accent color */
+  border-radius: 2px;
+}
+
+/* --- Brand Info --- */
+.brand-info .footer-logo {
+  font-size: 2.2em;
+  font-weight: bold;
+  color: #ff6f61; /* Logo color */
+  text-decoration: none;
+  display: block;
+  margin-bottom: 15px;
+}
+
+.brand-info .brand-tagline {
+  font-size: 1em;
+  line-height: 1.6;
+  margin-bottom: 25px;
+  color: #ccc;
+}
+
+/* Social Icons */
+.social-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.social-icons a {
+  color: #f0f0f0;
+  font-size: 1.8em; /* Size for react-icons */
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #f0f0f0;
+  border-radius: 50%;
+  transition: background-color 0.3s ease, color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.social-icons a:hover {
+  background-color: #ff6f61;
+  color: #fff;
+  border-color: #ff6f61;
+  transform: translateY(-3px); /* Subtle lift on hover */
+}
+
+/* --- Quick Links & Contact Info --- */
+.quick-links ul,
+.contact-info p {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.quick-links li {
+  margin-bottom: 12px;
+}
+
+.quick-links a,
+.contact-info p a {
+  color: #f0f0f0;
+  text-decoration: none;
+  font-size: 1.05em;
+  transition: color 0.3s ease;
+}
+
+.quick-links a:hover,
+.contact-info p a:hover {
+  color: #ff6f61;
+}
+
+.contact-info p {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.contact-info p svg {
+  /* For react-icons */
+  font-size: 1.2em;
+  margin-top: 2px;
+  color: #ff6f61;
+}
+
+.contact-info .working-hours {
+  font-style: italic;
+  color: #aaa;
+  margin-top: 20px;
+}
+
+/* --- Newsletter --- */
+.newsletter p {
+  font-size: 1em;
+  margin-bottom: 20px;
+  line-height: 1.6;
+  color: #ccc;
+}
+
+.newsletter-form {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap; /* Allows input/button to wrap on small screens */
+}
+
+.newsletter-form input[type="email"] {
+  flex-grow: 1; /* Input takes up available space */
+  padding: 12px 15px;
+  border: 1px solid #555;
+  border-radius: 8px;
+  background-color: #333;
+  color: #fff;
+  font-size: 1em;
+  transition: border-color 0.3s ease;
+  min-width: 180px; /* Ensure input isn't too small */
+}
+
+.newsletter-form input[type="email"]:focus {
+  outline: none;
+  border-color: #ff6b6b;
+}
+
+.newsletter-form button {
+  padding: 12px 25px;
+  background-color: #ff6b6b;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.newsletter-form button:hover {
+  background-color: #e55c50;
+  transform: translateY(-2px);
+}
+
+/* --- Footer Bottom Bar --- */
+.footer-bottom {
+  border-top: 1px solid #333;
+  padding-top: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.footer-bottom .copyright {
+  font-size: 0.95em;
+  color: #aaa;
+}
+
+.footer-bottom .legal-links {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-bottom .legal-links a {
+  color: #aaa;
+  text-decoration: none;
+  font-size: 0.95em;
+  transition: color 0.3s ease;
+}
+
+.footer-bottom .legal-links a:hover {
+  color: #ff6f61;
+}
+
+/* --- Media Queries for Responsiveness --- */
+@media (max-width: 992px) {
+  .footer-container {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+  }
+
+  .footer-column h3 {
+    font-size: 1.4em;
+    margin-bottom: 20px;
+  }
+
+  .brand-info .footer-logo {
+    font-size: 2em;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    grid-template-columns: 1fr; /* Stack columns on smaller tablets */
+    text-align: center; /* Center content when stacked */
+  }
+
+  .footer-column {
+    border-bottom: 1px solid #333; /* Separator for stacked columns */
+    padding-bottom: 30px;
+  }
+  .footer-column:last-child {
+    border-bottom: none; /* No border on the last column */
+    padding-bottom: 0;
+  }
+
+  .footer-column h3::after {
+    left: 50%;
+    transform: translateX(-50%); /* Center underline */
+  }
+
+  .social-icons {
+    justify-content: center;
+    margin-top: 15px; /* Add space below brand info */
+  }
+
+  .contact-info p {
+    justify-content: center; /* Center contact info */
+  }
+
+  .newsletter-form {
+    justify-content: center; /* Center newsletter form */
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-section {
+    padding: 40px 0 15px;
+  }
+  .footer-container {
+    padding: 0 15px;
+  }
+  .footer-column h3 {
+    font-size: 1.3em;
+  }
+  .brand-info .footer-logo {
+    font-size: 1.8em;
+  }
+  .social-icons a {
+    font-size: 1.5em;
+    width: 35px;
+    height: 35px;
+  }
+  .newsletter-form input,
+  .newsletter-form button {
+    width: 100%; /* Full width for input and button */
+  }
+}
+
+/* Pricing Section Styles */
+.service-pricing {
+  margin: 2rem 0;
+}
+
+.service-pricing h3 {
+  color: #333;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.pricing-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.pricing-card {
+  background: white;
+  border-radius: 10px;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.pricing-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.pricing-card.basic {
+  border-color: #4caf50;
+}
+
+.pricing-card.premium {
+  border-color: #2196f3;
+}
+
+.pricing-card.luxury {
+  border-color: #9c27b0;
+}
+
+.pricing-card h4 {
+  font-size: 1.3rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.pricing-card .price {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.pricing-card .duration {
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.pricing-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+  text-align: left;
+}
+
+.pricing-card ul li {
+  padding: 0.5rem 0;
+  color: #555;
+  display: flex;
+  align-items: center;
+}
+
+.pricing-card ul li:before {
+  content: "✓";
+  color: #4caf50;
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.pricing-card.basic ul li:before {
+  color: #4caf50;
+}
+
+.pricing-card.premium ul li:before {
+  color: #2196f3;
+}
+
+.pricing-card.luxury ul li:before {
+  color: #9c27b0;
+}
+
+/* Responsive adjustments for pricing cards */
+@media (max-width: 768px) {
+  .pricing-cards {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .pricing-card {
+    padding: 1.25rem;
+  }
+
+  .pricing-card .price {
+    font-size: 2rem;
+  }
+}
+
+/* Dashboard Styles */
+.dashboard-container {
+  padding: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.dashboard-header {
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #eee;
+}
+
+.dashboard-header h1 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.business-info {
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 10px;
+  margin-top: 1rem;
+}
+
+.business-info h2 {
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.business-info p {
+  color: #666;
+  margin: 0.25rem 0;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.dashboard-card {
+  background: white;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-card h3 {
+  color: #333;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #eee;
+}
+
+/* Appointments List Styles */
+.appointments-list {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.appointment-item {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid #eee;
+  gap: 1rem;
+}
+
+.appointment-time {
+  font-weight: bold;
+  color: #333;
+  min-width: 100px;
+}
+
+.appointment-details {
+  flex-grow: 1;
+}
+
+.appointment-details h4 {
+  color: #333;
+  margin-bottom: 0.25rem;
+}
+
+.appointment-details p {
+  color: #666;
+  margin: 0.25rem 0;
+  font-size: 0.9rem;
+}
+
+.appointment-actions select {
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+/* Service Form Styles */
+.service-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.service-form input,
+.service-form textarea {
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.service-form textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.price-inputs {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.price-inputs input {
+  flex: 1;
+  min-width: 120px;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+}
+
+/* Business Hours Styles */
+.business-hours {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.day-hours {
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 5px;
+}
+
+.day-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.day-header h4 {
+  color: #333;
+  margin: 0;
+}
+
+.time-inputs {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.time-inputs input {
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+/* Business Info Form Styles */
+.business-info-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.business-info-form input,
+.business-info-form textarea {
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.business-info-form textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+/* Button Styles */
+button {
+  background-color: #4caf50;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .dashboard-container {
+    padding: 1rem;
+  }
+
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .price-inputs {
+    grid-template-columns: 1fr;
+  }
+
+  .appointment-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .appointment-actions {
+    width: 100%;
+  }
+
+  .appointment-actions select {
+    width: 100%;
+  }
+}
+
+/* Dashboard View Mode Selector */
+.view-mode-selector {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.view-mode-selector button {
+  padding: 0.5rem 1rem;
+  background: #f8f9fa;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.view-mode-selector button.active {
+  background: #4caf50;
+  color: white;
+  border-color: #4caf50;
+}
+
+/* Service Categories */
+.service-category {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+
+.service-category h5 {
+  color: #333;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.services-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.services-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem;
+  border-bottom: 1px solid #eee;
+}
+
+.services-list li:last-child {
+  border-bottom: none;
+}
+
+.services-list li.inactive {
+  opacity: 0.6;
+}
+
+.service-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.service-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.edit-button,
+.delete-button {
+  padding: 0.25rem 0.75rem;
+  font-size: 0.9rem;
+}
+
+.edit-button {
+  background: #2196f3;
+}
+
+.delete-button {
+  background: #f44336;
+}
+
+.cancel-button {
+  background: #9e9e9e;
+  margin-left: 1rem;
+}
+
+/* Service Form Enhancements */
+.service-form select {
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.service-status {
+  margin: 1rem 0;
+}
+
+.service-status label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+/* Appointment Notes */
+.appointment-notes {
+  font-style: italic;
+  color: #666;
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  background: #f8f9fa;
+  border-radius: 4px;
+}
+
+/* Calendar View Placeholder */
+.calendar-view,
+.appointment-history {
+  padding: 2rem;
+  text-align: center;
+  background: #f8f9fa;
+  border-radius: 8px;
+  color: #666;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .view-mode-selector {
+    flex-direction: column;
+  }
+
+  .service-actions {
+    flex-direction: column;
+  }
+
+  .services-list li {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: flex-start;
+  }
+}
+
+/* Booking Component Styles */
+.booking-container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.booking-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.booking-header h2 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.service-title {
+  font-size: 1.5rem;
+  color: #4caf50;
+  margin-bottom: 0.5rem;
+}
+
+.service-description {
+  color: #666;
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.booking-form {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.form-section {
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 10px;
+}
+
+.form-section h3 {
+  color: #333;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+/* Date Picker Styles */
+.date-picker {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  gap: 0.5rem;
+}
+
+.date-option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.date-option:hover {
+  border-color: #4caf50;
+  transform: translateY(-2px);
+}
+
+.date-option.selected {
+  background: #4caf50;
+  border-color: #4caf50;
+  color: white;
+}
+
+.date-option .day {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.date-option .date {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0.25rem 0;
+}
+
+.date-option .month {
+  font-size: 0.8rem;
+  color: #666;
+}
+
+.date-option.selected .month {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Time Slots Styles */
+.time-slots {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 0.5rem;
+}
+
+.time-slot {
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.time-slot:hover {
+  border-color: #4caf50;
+  transform: translateY(-2px);
+}
+
+.time-slot.selected {
+  background: #4caf50;
+  border-color: #4caf50;
+  color: white;
+}
+
+/* Form Input Styles */
+.input-group {
+  margin-bottom: 1rem;
+}
+
+.input-group input,
+.input-group textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+  outline: none;
+  border-color: #4caf50;
+}
+
+.input-group input.error,
+.input-group textarea.error {
+  border-color: #f44336;
+}
+
+.error-message {
+  color: #f44336;
+  font-size: 0.9rem;
+  margin-top: 0.25rem;
+  display: block;
+}
+
+.global-error {
+  text-align: center;
+  margin: 1rem 0;
+  padding: 1rem;
+  background: #ffebee;
+  border-radius: 8px;
+}
+
+/* Form Actions */
+.form-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.submit-button,
+.cancel-button {
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.submit-button {
+  background: #4caf50;
+  color: white;
+}
+
+.submit-button:hover {
+  background: #45a049;
+  transform: translateY(-2px);
+}
+
+.submit-button:disabled {
+  background: #9e9e9e;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.cancel-button {
+  background: #f5f5f5;
+  color: #333;
+}
+
+.cancel-button:hover {
+  background: #e0e0e0;
+  transform: translateY(-2px);
+}
+
+/* Booking Success Styles */
+.booking-success {
+  text-align: center;
+  padding: 3rem;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  margin: 2rem auto;
+}
+
+.success-icon {
+  font-size: 4rem;
+  color: #4caf50;
+  margin-bottom: 1rem;
+}
+
+.booking-success h2 {
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.booking-success p {
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+
+.redirect-message {
+  font-style: italic;
+  color: #999;
+  margin-top: 1rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .booking-container {
+    padding: 1rem;
+    margin: 1rem;
+  }
+
+  .booking-header h2 {
+    font-size: 2rem;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .date-picker,
+  .time-slots {
+    grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+  }
+
+  .form-actions {
+    flex-direction: column;
+  }
+
+  .submit-button,
+  .cancel-button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .booking-header h2 {
+    font-size: 1.8rem;
+  }
+
+  .service-title {
+    font-size: 1.3rem;
+  }
+
+  .date-option .date {
+    font-size: 1.3rem;
+  }
+}
